@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>朋友们</title>
+</head>
+<body>
+<script>
+    const age = 18;
+const friends = [
+  {
+    name: '吴纯阳',
+    hometown: '上饶',
+    college: '湖南工业大学'
+  },
+  {
+    name: '谢平',
+    hometown: '赣州'
+  },
+];
+friends.push({
+  name:"邓文凯",
+  hometown: "宜春"
+})
+//栈 队列 
+const newfriend = friends;
+newfriend.unshift({
+  name:"陈益",
+  hometown: "宜春"
+})
+</script>
+</body>
+</html>
