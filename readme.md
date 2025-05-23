@@ -40,4 +40,5 @@
   - prompt Engineering 自然语义编程
   - Coplit 协助编程
 
-  - git 版本控制
+  - git 版本控制1
+  
