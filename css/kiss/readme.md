@@ -14,13 +14,13 @@ border-radius
 animation 世界
 
 
-- 快
+- html 结构快捷输入方式
 -  div#l-ball.ball  // emmet 语法  css选择器   #后面是id  .后面是class
-- .container>#l-ball.ball + #r-ball.ball  // + 相邻兄弟选择器 > 子选择器
+- .container>#l-ball.ball + #r-ball.ball  // + 相邻兄弟选择器 > 子元素选择器
  - id 唯一
  - class 类名
  - .container?
-  盒子 页面居中
+  盒子 用来实现页面居中
   水平垂直居中
 
   - dispaly 属性
@@ -38,7 +38,7 @@ animation 世界
    - position 定位
     static 没有定位能力
     relative 相对定位
-      - 子元素相对它定位
+      - 告诉子元素相对它定位
       - 相对于自身的位置定位
     absolute 绝对定位
     absolute 找到离他最近的（可以管着它）position不为static的元素定位
