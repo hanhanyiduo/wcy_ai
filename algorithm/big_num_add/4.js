@@ -1,0 +1,4 @@
+const bigNum = 123456789012345678901234567890123456789n
+const theNum = BigInt("123456789012345678901234567890123456789")
+console.log(bigNum,theNum);
+console.log(bigNum+1);
