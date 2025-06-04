@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="friend"></ul>
+    <script>
+ // JSON 数组
+ // 数据 
+const friends = [
+        {name:'louhuan',hometown : '抚州'},
+        {name:'wangxinzhi',hometown:'上饶'},
+        {name:'liufuzhou',hometown:'赣州'}
+    ]
+    //DOM 编程
+    const ul = document.getElementById('friend');
+   for(let i = 0;i<friends.length;i++)
+    {
+        const friend = friends[i];
+        ul.innerHTML += `
+        <li>
+            ${friend.name}-
+            <i>${friend.hometown}</i>
+        </li>
+        `
+    }
+    //forof 循环
+    /*for(let friend of friends){
+        ul.innerHTML += `
+        <li>
+            ${friend.name}-
+            <i>${friend.hometown}</i>
+        </li>
+    }*/
+   // es6 forEach 升级版
+   // 迭代 
+   //箭头函数，省略function 省略(),{} 省略return
+    ul.innerHTML=map(friend=>
+     //console.log(friend); 
+     `
+    <li>
+         ${friend.name}-
+        <i>${friend.hometown}</i>
+    </li>    
+    `
+   ).join('')
+    </script>
+</body>
+</html>
