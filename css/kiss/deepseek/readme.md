@@ -27,3 +27,17 @@
 
    - LLM AI 时代
      fetch 取来大模型的能力 智能前端时代
+
+   ## http 请求
+      - 请求行 GET http://www.baidu.com
+        POST https://api.deepseek.com/chat/completion 
+      - 请求头 
+        设置各种头部信息
+        {
+          Content-Type: application/json,//请求体类型
+          Authorization: Bearer xxx, //请求凭证
+        }
+      - 请求体
+        GET 没有请求体 
+        POST 可以有请求体
+        
