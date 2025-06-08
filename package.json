@@ -1,0 +1,20 @@
+{
+  "name": "lesson_si",
+  "version": "1.0.0",
+  "description": "- 不做传统程序员\r   - 以智能生产力为核心(LLM 强大的，适合的，性价比)\r     OpenAI\r     Claude sonnet (特别适合代码生成) \r     deepseek\r   - 将AI 融入开发流程\r     - Prompt Engineering(**编程**)\r       - 给一个身份， 像人一样思考\r       - 给个具体的任务\r       - 细化流程，清晰准确\r       - 遵守什么规则， 不要做什么 \r   - 打造AI应用\r   - AI驱动的自动化应用",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanhanyiduo/wcy_ai.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hanhanyiduo/wcy_ai/issues"
+  },
+  "homepage": "https://github.com/hanhanyiduo/wcy_ai#readme"
+}
