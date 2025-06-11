@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数中的this</title>
+</head>
+<body>
+<script>
+var name = "windowsName";
+var a = {
+    name:'Tom',
+    func1:function(){
+        console.log(this);
+    },
+    func2: function(){
+        //this -> a
+        setTimeout(()=>{
+        //this 没有 该省都省 
+        this.func1();
+        },1000)
+    }
+}
+a.func2();
+//如果箭头函数改成普通函数，则this指向window，则报错
+</script>    
+</body>
+</html>
