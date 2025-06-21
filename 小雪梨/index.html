@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>给小雪梨的信</title>
+  <style>
+    body {
+      background-color: pink;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    h1 {
+      color: #d23669;
+    }
+
+    button {
+      background-color: #ff6b81;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 20px 0;
+    }
+
+    button:hover {
+      background-color: #ff4757;
+    }
+
+    .letter {
+      text-align: left;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      display: none; /* 初始隐藏 */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>我喜欢你</h1>
+    <p>我想对你说的话</p>
+    <button id="btn">点我</button>
+    <div class="letter" id="letter">
+      亲爱的雪梨宝：<br>
+      展信阅。<br>
+      我想对你说，我的小雪梨是一个非常可爱可爱可爱的人，从第一次见到你跟你聊天，你说话的方式、说话的语气、还有你说话时那些不经意的小动作（戳手指，举手手），我就对你有了一种特殊的感觉，算是好感吧。再到后面我去找你，你请我吃好吃的，带我出去玩，骑车时唱着甜美的歌，我就觉得你真的非常非常非常讨人喜欢，还有你骑车时靠在我肩膀上，我的心情真的很激动，但是又有点紧张，因为我不知道如何去回应你。<br>
+      我确实可以说是没谈过恋爱，所以确实没有什么经验去哄人也好，创造浪漫也好，这是我的缺点，我会慢慢去改变，变成一个小雪梨喜欢的"温柔"的人。<br>
+      我每次干家教时候，我都会想该给小雪梨买好吃的了，因为我现在所处的阶段确实没有收入来源，所以只能力所能及的给你买一点吃的，除非我不要脸天天啃老（这时候小雪梨又要说啦，这不是啃老，啃老是……），所以我努力学习，当然你也不要有压力哦，这是我对自己的要求。<br>
+      每次跟你视频我都很开心，我最近学习压力确实很大，每天都学到挺晚的说真的，但是每次跟你视频完之后，我就特别开心，就像上次我不开心你没开摄像头，真不开心，因为我见不到你我真的会难过，所以可能才让你觉得我态度不好这样。但是我绝对没有生你的气。<br>
+      今天你说的话我确实很难过，但是我会很快缓过来的，到时候见到你我就全都烟消云散啦，这点事情算个🥚啊！<br>
+      雪梨宝宝，你不要不开心哦！我有时候表达的方式可能不太对，你大人有大量，原谅我叭。<br>
+      许文玲，我真的不会写情书！！！这算是第一次写了，好吧这可能也是个检讨书。<br>
+      因为遇见你我的生活才有了色彩！（我都不好意思了）好啦！我要去上课啦<br>
+      —爱你的小阳
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('btn').addEventListener('click', function () {
+      alert('雪梨宝宝天天开心！');
+      document.getElementById('letter').style.display = 'block';
+    });
+  </script>
+</body>
+</html>

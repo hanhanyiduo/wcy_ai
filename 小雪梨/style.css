@@ -1,0 +1,40 @@
+body {
+    background-color: pink;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    color: #d23669;
+}
+
+button {
+    background-color: #ff6b81;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px 0;
+}
+
+button:hover {
+    background-color: #ff4757;
+}
+
+.letter {
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
