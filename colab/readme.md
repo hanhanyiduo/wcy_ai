@@ -8,4 +8,4 @@
   - 微调 喂给 CNN 数据
     文字类npl 有优势
     专业， openai， 还要有huggingface
-  - large size model  1
+  - large size model  
