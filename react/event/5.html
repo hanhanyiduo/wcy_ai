@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #menu {
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        padding: 20px;
+        background: #f2f2f2;
+        border: 1px solid #ccc;
+    }
+    </style>
+</head>
+<body>
+    <div id="toggle">Toggle Menu</div>
+    <div id="menu">
+        <p>Menu Context</p>
+        <button id="closeInside">Don't closed</button>
+    </div>
+    <script>
+    const toggleBtn = document.getElementById('toggle'); // 修正：应该是toggle按钮
+    const menu = document.getElementById('menu');
+    const closeInside = document.getElementById('closeInside');
+
+    // 点击toggle按钮切换菜单显示
+    toggleBtn.addEventListener('click',function(e){
+        e.stopPropagation();
+        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    })
+    
+    // 点击文档其他部分关闭菜单
+    document.addEventListener('click',function(){
+        menu.style.display = 'none'; // 修正：'none'应该是字符串
+    })
+    
+    // 阻止菜单内部点击事件冒泡
+    closeInside.addEventListener('click',function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        alert('Menu button clicked')
+    })
+    </script>
+</body>
+</html>

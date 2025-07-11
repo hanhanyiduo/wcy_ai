@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Throttle Demo</title>
+</head>
+<body>
+
+<!-- 输入框 -->
+<input type="text" id="inputC" />
+
+<script>
+// 1️⃣ 获取输入框元素
+let inputC = document.getElementById('inputC');
+
+// 2️⃣ 被节流的函数（模拟 ajax 请求）
+const ajax = function(content) {
+  // 这里实际场景会用 fetch 或 XMLHttpRequest 发起网络请求
+  console.log('ajax request ' + content);
+}
+
+// 3️⃣ 节流函数
+function throttle(fn, delay) {
+  let last,        // 上一次执行的时间戳
+      deferTimer;  // 延迟执行的定时器ID
+  // 返回一个包装后的函数
+  return function (args) {
+    let that = this;              // 保存 this 指向（闭包）
+    let now = +new Date();        // 当前时间戳
+
+    // 如果上次执行过且时间间隔小于 delay，说明触发太频繁
+    if (last && now < last + delay) {
+      clearTimeout(deferTimer);   // 清除之前的延迟定时器（防止多次触发）
+      deferTimer = setTimeout(function() {
+        last = now;               // 更新上次执行时间
+        fn.call(that, args);      // 执行目标函数
+      }, delay);                  // 等待 delay 毫秒后再执行
+    } else {
+      // 如果是第一次执行，或间隔已超过 delay，立即执行
+      last = now;                 // 更新上次执行时间
+      fn.call(that, args);        // 执行目标函数
+    }
+  }
+}
+
+// 4️⃣ 用 throttle 包装 ajax，设置节流时间为 200ms
+let throttleAjax = throttle(ajax, 200);
+
+// 5️⃣ 给输入框绑定 keyup 事件，使用节流后的函数
+inputC.addEventListener('keyup', function(e) {
+  throttleAjax(e.target.value); // 将输入内容传给 throttleAjax
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function debounce(fn,delay){
+            
+        return function(args) {
+            // 定时器返回一个ID 
+            // fn 是一个自由变量 
+            // fn 一等对象
+            var that = this; 
+            console.log(that,'////');
+            clearTimeout(fn.id);
+            fn.id = setTimeout(function(){
+                // this 丢失问题
+                fn.call(that,args);
+            },delay);
+        }
+    }
+
+
+let obj = {
+    count: 0,
+    inc:debounce(function(vel){
+        // this
+        console.log(this.count,'///');
+        console.log(this.count += vel);
+    },500),
+}
+obj.inc(2);
+    </script>
+</body>
+</html>
