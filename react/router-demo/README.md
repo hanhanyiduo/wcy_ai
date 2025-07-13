@@ -22,3 +22,50 @@
 - react 19 
 - react-dom 19
 - react-router-dom 7.6.3 大版本，小版本（更新迭代），紧急版本
+## react 特色
+- 全面组件化
+  vue 更执着 
+  react 函数化编程
+
+  - 动态路由
+    https//juejin.cn/users/123?a=1&b=2#hash (协议 域名 端口 路径 搜索（querystring） 哈希)
+    path /users/:id params
+    # restful 国际规范  
+    url 定义是核心部分
+    Method 资源的描述
+    GET /user/:id
+    GET /post/:id 显示某篇文章
+    POST /post 新增文章
+    PATCH /post/:id 修改文章一部分 PUT（替换全部的文章）
+    上传头像 PUT /avater/id:
+    DELETE /post/:id 删除文章
+    HEAD /post/:id 检查资源的元信息
+    - 后端路由 暴露资源
+
+- 前端路由
+
+- 后端路由
+  早期只有后端路由
+  server -> http -> 路由（后端） -> 响应html网页 传统的后端驱动的web 开发方式
+  展示下一个页面 再来一个请求
+  /
+  / about 
+  - 优点是足够简单
+  - 前后端耦合 后端要写前端的页面
+  - 浪费沟通时间
+  - 逻辑，数据库 ， 套页面 MVC 开发方式 Model(数据) View（视图） Controller（控制器）（重点！！）
+  - 不再以返回页面为目的
+  - /api/user/123 接口 返回 JSON 数据
+
+- 前后端分离 MVVM Model(fetch api) View(JSX) ViewModel(视图模型层 useState,数据绑定JSX)
+  - 前后端连调 api 开发文档，  约定 
+  - 前后端分离开发， 以API开发文档 为约定
+  - 前端当家做主
+  - 前端也有了路由 react-router-dom
+    /user/id path 页面级别组件
+  - html/css/js react 框架
+    useState 
+    useEffect
+      fetch 后端 api 拿到数据
+      完成web 应用
+      PC/Moblie/App/小程序/桌面端  大前端

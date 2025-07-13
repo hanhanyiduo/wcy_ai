@@ -14,7 +14,7 @@ setTimeout(() => {
     const promise4 = Promise.resolve('Forth Promise')
     promise4.then(value => console.log(value))
     },0)
-setTimeout(() => {
+    setTimeout(() => {
         console.log('下下一把再相见')
     },0)
 promise1.then(value => console.log(value));
