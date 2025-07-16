@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闭包-单例</title>
+</head>
+<body>
+<script>
+// 回到函数， 闭包
+// 自由变量 唯一的实例
+// function StorageBase() {
+//     let Instance = null;
+//     return function getInstance() {
+//         if(!Instance){
+//             Instance = new StorageBase()
+//         }
+//         return Instance;
+//     }
+// }
+function StorageBase(){}
+StorageBase.prototype.getItem = function(key) {
+    return localStorage.getItem(key);
+}
+StorageBase.prototype.setItem = function(key, value) {
+    localStorage.setItem(key, value);
+}
+// const storage1 = new StorageBase();
+// const storage2 = new StorageBase();
+// console.log(storage1 === storage2);
+const Storage = (function() {
+    let instance = null;
+    return function() {
+        if(!instance){
+            instance = new StorageBase();
+        }
+        return instance; //返回的是闭包里面的对象，只是一开始new了一个StorageBase，后面都是返回的这个对象
+    }
+})();
+const storage1 = new Storage();
+const storage2 = new Storage();
+console.log(storage1 === storage2);
+storage1.setItem('name', '张三');
+console.log(storage1.getItem('name'));
+console.log(storage2.getItem('name'));
+</script>
+</body>
+</html>
+<!-- function StorageBase(){};
+StorageBase.prototype.setItem(key,value){
+    LocalStorage.setItem(key,value);
+}
+StorageBase.prototype.getItem(key){
+    return LocalStorage.getItem(key);
+}
+const Storage = (function(){
+    let instance;
+    return function(){
+        if(!instance){
+            instance = new StorageBase()//必须通过 new 实例化才能使用其原型方法。 这里指的是getset方法
+        }
+        return instance
+    }
+})()
+
+法2：
+const Storage = (function(){
+
+    let instance;
+    function StorageBase() {
+        if(instance){
+            return instance
+        }
+        instance = this;
+    }
+    StorageBase.prototype.setItem(key,value){
+    LocalStorage.setItem(key,value);
+}
+    StorageBase.prototype.getItem(key){
+    return LocalStorage.getItem(key);
+}
+    return StorageBase;
+})()
+
+const s1 = new Storage() -->
