@@ -52,3 +52,29 @@ hash
 
 - 事件
     hashChange 浏览器有事件 hashchange 可以捕获 hash 的变化
+
+## 基于SPA 
+- url 可以改变，但不会向后端发送请求 前端路由
+    - hash + hashChange 事件 + DOM
+    - history + pushState/popState
+- 前路路由通过react-router-dom 配置 页面级别组件
+    热更新 Route
+    Outlet
+- 单页应用
+    只有一个页面 但可以有多个URL 路由状态
+    有多个页面级别组件
+    window.location window.history
+    栈
+    State
+
+- history
+    很早就有，在浏览器历史记录里游走
+    - html5 赋予history 新的功能
+    - hash + hashChange 有有点，但是有很大的缺点
+        兼容性好
+        缺点 https://www.zhihu.com/#home
+        hash 不好理解 
+        不这样，传统后端路由一样
+        http://..../about 关于
+    - 怎么样像后端路由一样，不刷新页面？
+    - html5 升级了history 来实现
