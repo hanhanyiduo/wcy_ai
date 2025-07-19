@@ -31,4 +31,16 @@
         入口文件
         添加路由功能， SPA 
         添加全局应用状态管理
-        
+- RepoList 功能模块
+    - params 解析
+        - useParams 动态参数对象
+        - 不要放到useEffect里面
+        - 校验id
+            不要相信用户的任何提交
+        - navigate('/') -> useEffect 中去（useNavigate不能放里面hooks都不能放里面！！）
+- 组件开发模式
+    - UI 组件（JSX） 
+    - 自定义hooks useRepos
+    - 状态管理 应用全局 context 来管
+        - repos loading error  => context value
+        - useReducer reducer 函数 
