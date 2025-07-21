@@ -15,6 +15,13 @@
     - pnpm i @babel cli @babel/core -D
         @babel/cli babel的命令行工具
         @babel/core babel的核心工程
+    - pnpm i @babel/preset-react(可以换成别的) -D
+    - 创建.babelrc
+     {
+        "presets": ["@babel/preset-react"]
+     }
+    - ./node_modules/.bin/babel
+    - npm babel 1.jsx -o 2.jsx
         bebel 负责JS 转码的
         -D 开发阶段的依赖
         上线后是不用的

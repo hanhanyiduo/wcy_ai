@@ -3,10 +3,20 @@ import './App.css'
 
 function ControlledInput({onSubmit}) {
   const[value,setValue] = useState('')// 响应式状态
+  const [error,setError] = useState('')
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(value,'//////')
     onSubmit(value)
+  }
+  const handleChange = (e) => {
+    setValue(e.target.value)
+    // 频繁触发 实时判断表单是否合格
+    if(e.target.value.length < 6) {
+      setError('请输入6个字符以上')
+    } else {
+      setError('')
+    }
   }
   return(
     <form onSubmit={handleSubmit}>
@@ -14,8 +24,10 @@ function ControlledInput({onSubmit}) {
       <input 
       type="text" 
       value={value}
-      onChange={(e) => setValue(e.target.value)}
+      onChange={handleChange}
+      required
       />
+      {error && <p>{error}</p>}
       <input type="submit" value="提交" />
     </form>
   )
@@ -23,7 +35,8 @@ function ControlledInput({onSubmit}) {
 
 function UncontrolledInput({onSubmit}) {
   const inputRef = useRef(null)
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
     const value = inputRef.current.value
     console.log(value,'????????')
     onSubmit(value)
