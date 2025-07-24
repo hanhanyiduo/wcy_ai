@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken';
 // 安全性 编码的时候加密
 // 解码的时候用于解密
+// 加盐
 const secret = '!@#$%^&*()_+';
 // login 模块 mock 
 export default [
@@ -11,7 +12,7 @@ export default [
         response: (req, res) => {
             // req, username, password
             const {username, password} = req.body;
-            if(username !== 'admin' && password !== '123456'){
+            if(username !== 'admin' || password !== '123456'){
                 return {
                     code: 1,
                     message: '用户名或密码错误',
@@ -30,8 +31,10 @@ export default [
             console.log(token)
             return {
                 token,
-                username,
-                password
+                data: {
+                    id: "001",
+                    username:'admin',
+                }
             }
         }
     },
@@ -40,7 +43,8 @@ export default [
         method: 'get',
         response: (req,res) => {
             // 用户端 token headers 
-            const token = req.headers["authorization"];
+            const token = req.headers["authorization"].split(' ')[1];
+            console.log(token)
             try {
                 const decode = jwt.decode(token,secret);
                 console.log(decode)

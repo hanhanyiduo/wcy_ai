@@ -30,3 +30,16 @@
     - HTTP 请求头 Authorization 带上token
     - Cookie 每次自动带上
     - token 需要手动设置的
+
+- 加盐 
+    secret 
+    传递token 前面会加上Bearer ${token} 表示持有者
+    通过 http headers Authorization
+
+- 前端的用户权限 流程
+    - zustand 
+        登录、user useUserstore
+    - 登录页面
+        受控/非受控组件
+    - 路由守卫
+    - api/ 
