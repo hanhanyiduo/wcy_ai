@@ -3,9 +3,9 @@ import {
 } from 'react'
 
 function useTitle(title) {
-    useEffect(() => {
+    // useEffect(() => {
         document.title = title // 页面标题
-    }, [title])
+    // }, [title])
 }
 
 export default useTitle

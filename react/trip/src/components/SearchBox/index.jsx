@@ -21,9 +21,10 @@ const SearchBox = (props) => {
     const { handleQuery } = props
     const handleChange = (e) => {
         let val = e.currentTarget.value;
-        setQuery(val);
+        setQuery(val);     
     }
     const displayStyle = query ? { display: 'block' } : { display: 'none' };
+    // 非受控组件
     const clearQuery = () => {
         setQuery('')
         queryRef.current.value = "";
@@ -34,7 +35,6 @@ const SearchBox = (props) => {
     const handleQueryDebounce = useMemo(() => {
         return debounce(handleQuery, 300)
     },[handleQuery]);//清除闭包
-    // 非受控组件
     useEffect (() => {
         console.log('query','////')
         handleQueryDebounce(query)
