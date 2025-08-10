@@ -11,6 +11,7 @@ import {
 import MainLayout from '@/components/MainLayout'
 import BlankLayout from '@/components/BlankLayout'
 import Loading from '@/components/Loading'
+import Toast from '@/components/Toast'
 
 const Home = lazy(() => import('@/pages/Home'))
 const Search = lazy(() => import('@/pages/Search'))
@@ -19,6 +20,8 @@ const Collection = lazy(() => import('@/pages/Collection'))
 const Trip = lazy(() => import('@/pages/Trip'))
 const Account = lazy(() => import('@/pages/Account'))
 const Detail = lazy(() => import('@/pages/Detail'))
+const Article = lazy(() => import('@/pages/Article'))
+const ArticleNew = lazy(() => import('@/pages/Article/ArticleNew'))
 
 
 function App() {
@@ -41,10 +44,14 @@ function App() {
         <Routes>
           <Route element={<BlankLayout />}>
             <Route path="/search" element={<Search />} />
+            <Route path='/article' element={<Article />} >
+              <Route path='/article/articlenew' element={<ArticleNew />} />
+            </Route>
             <Route path="/detail/:id" element={<Detail />} />
           </Route>
         </Routes>
       </Suspense>
+      <Toast />
     </>
   )
 }

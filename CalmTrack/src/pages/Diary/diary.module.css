@@ -1,0 +1,104 @@
+/* src/pages/Diary.module.css */
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f5f9f7;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #2f4f4f;
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #3aafa9;
+}
+
+.inputGroup {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #206a5d;
+}
+
+.input,
+.textarea {
+  border: 1.5px solid #9dd9d2;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 16px;
+  outline: none;
+  resize: none;
+  transition: border-color 0.3s ease;
+  background: white;
+  color: #2f4f4f;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #3aafa9;
+  box-shadow: 0 0 8px #3aafa9aa;
+}
+
+.textarea {
+  min-height: 120px;
+}
+
+.saveButton {
+  width: 100%;
+  padding: 12px 0;
+  background-color: #3aafa9;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 32px;
+}
+
+.saveButton:hover {
+  background-color: #2a8f8a;
+}
+
+.entries {
+  border-top: 1px solid #9dd9d2;
+  padding-top: 20px;
+}
+
+.entry {
+  background-color: #d9f0ec;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 6px rgba(58,175,169,0.3);
+}
+
+.entryDate {
+  font-weight: 600;
+  color: #206a5d;
+  margin-bottom: 6px;
+}
+
+.entryContent {
+  white-space: pre-wrap;
+  color: #2f4f4f;
+  line-height: 1.4;
+}
+
+.noEntry {
+  text-align: center;
+  color: #7a9e95;
+  font-style: italic;
+  margin-top: 20px;
+}

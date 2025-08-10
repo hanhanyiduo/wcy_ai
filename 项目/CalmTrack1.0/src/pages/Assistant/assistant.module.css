@@ -1,0 +1,165 @@
+/* 聊天区：预留底部输入框 + navbar 高度，防止被遮挡 */
+.chatArea {
+  padding: 16px;
+  padding-bottom: calc(64px + 56px); /* 输入框64px + navbar 56px */
+  background: linear-gradient(180deg, #f6f3ff 0%, #ffffff 100%);
+  overflow-y: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  scrollbar-width: thin;
+  scrollbar-color: #b8aee6 transparent;
+  transition: background-color 0.3s ease;
+}
+
+.chatArea::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chatArea::-webkit-scrollbar-thumb {
+  background-color: #b8aee6;
+  border-radius: 3px;
+  box-shadow: inset 0 0 3px rgba(255,255,255,0.5);
+}
+
+.messageLeft,
+.messageRight {
+  max-width: 70%;
+  padding: 12px 18px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  line-height: 1.5;
+  word-break: break-word;
+  box-shadow: 0 2px 12px rgba(138, 114, 255, 0.15);
+  animation: fadeInUp 0.3s ease forwards;
+}
+
+.messageLeft {
+  background-color: #e6e0ff;
+  color: #3c3178;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+  filter: drop-shadow(0 1px 2px rgba(130, 108, 255, 0.25));
+}
+
+.messageRight {
+  background-color: #7a5fff;
+  color: #f0e9ff;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+  box-shadow: 0 4px 12px rgba(122, 95, 255, 0.4);
+}
+
+.messageLeft svg,
+.messageRight svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  fill: currentColor;
+  opacity: 0.85;
+}
+
+/* 输入区域固定在底部 */
+.inputArea {
+  position: fixed;
+  bottom: 56px; /* 预留给 navbar 高度 */
+  left: 0;
+  right: 0;
+  padding: 14px 20px;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  gap: 12px;
+  box-shadow: 0 -3px 10px rgba(186, 163, 255, 0.15);
+  backdrop-filter: saturate(180%) blur(8px);
+  border-radius: 20px 20px 0 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  border-radius: 28px !important;
+  border: 1.5px solid #a08eff !important;
+  padding-left: 20px !important;
+  height: 44px !important;
+  font-size: 15px !important;
+  color: #5a4b81;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input:focus {
+  border-color: #7a5fff !important;
+  box-shadow: 0 0 8px #7a5fff !important;
+  outline: none;
+}
+
+button {
+  min-width: 90px;
+  border-radius: 28px;
+  font-weight: 700;
+  height: 44px;
+  line-height: 44px;
+  background: linear-gradient(135deg, #a68cff, #7a5fff);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(122, 95, 255, 0.45);
+  transition: background 0.3s ease;
+  cursor: pointer;
+  border: none;
+  flex-shrink: 0;
+}
+
+button:disabled {
+  background: #c5b7f5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+button:not(:disabled):hover {
+  background: linear-gradient(135deg, #7a5fff, #a68cff);
+}
+
+/* loading 动画呼吸效果，显示在输入框上方 */
+.fixed-loading {
+  position: fixed;
+  bottom: calc(56px + 64px + 12px); /* navbar + 输入框 + 小间距 */
+  right: 20px;
+  z-index: 1200; /* 保证最高层 */
+  background: rgba(122, 95, 255, 0.25);
+  padding: 16px;
+  border-radius: 50%;
+  box-shadow: 0 0 24px rgba(122, 95, 255, 0.7);
+  animation: pulse 1.5s infinite ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  color: #7a5fff; /* 主题紫色 */
+}
+
+/* 动画 */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}

@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-vant/icons": "^0.1.0",
     "lib-flexible": "^0.3.2",
+    "mitt": "^3.0.1",
     "mockjs": "^1.1.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

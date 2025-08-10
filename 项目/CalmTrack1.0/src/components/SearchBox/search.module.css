@@ -1,0 +1,44 @@
+/* SearchBox 外层 */
+.wrapper {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border-radius: 24px;
+  padding: 6px 12px;
+  box-shadow: 0 2px 6px rgba(140, 108, 255, 0.1);
+}
+
+/* 左侧返回箭头 */
+.wrapper svg {
+  font-size: 20px;
+  color: #8c6cff;
+  margin-right: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* 输入框 */
+.ipt {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  color: #5a4b81;
+  padding: 6px 4px;
+}
+
+/* placeholder 样式 */
+.ipt::placeholder {
+  color: #aaa3cc;
+}
+
+/* 清空按钮 */
+.wrapper .rv-icon {
+  font-size: 18px;
+  color: #8c6cff;
+  cursor: pointer;
+  margin-left: 6px;
+  flex-shrink: 0;
+}

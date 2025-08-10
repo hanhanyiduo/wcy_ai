@@ -128,5 +128,4 @@ const Account = () => {
         </div>
     )
 }
-sb
 export default Account

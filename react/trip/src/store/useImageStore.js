@@ -12,7 +12,7 @@ export const useImageStore = create((set,get) => ({
         if (get().loading) return;
         set({loading:true}); // 请求中
         const res = await getImages(get().page)
-        console.log(res,"//////////////////////////");
+        console.log(res,"////////////////////");
         const newImages = res.data
         // 之前的状态
         set((state) => ({

@@ -1,0 +1,69 @@
+.container {
+  background: linear-gradient(to bottom, #f6f3ff, #ffffff);
+  min-height: 100vh;
+  padding: 16px;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+/* 居中包裹 */
+.wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* 热门推荐 */
+.hotList {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(140, 108, 255, 0.08);
+  margin-top: 16px;
+}
+
+.hotList h1 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #6b58b5;
+  margin-bottom: 12px;
+  border-left: 4px solid #8c6cff;
+  padding-left: 8px;
+}
+
+.item {
+  padding: 10px 14px;
+  background: #f9f7ff;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #5a4b81;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.item:hover {
+  background: #e9e4ff;
+}
+
+/* 搜索建议列表 */
+.list {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 12px;
+  border-radius: 12px;
+  margin-top: 16px;
+  box-shadow: 0 4px 12px rgba(140, 108, 255, 0.06);
+}
+
+.list .item {
+  background: #faf9ff;
+}
+
+.list .item:hover {
+  background: #ece6ff;
+}
+
+/* 提示文字 */
+.list p, .hotList p {
+  color: #999;
+  font-size: 14px;
+  text-align: center;
+}
