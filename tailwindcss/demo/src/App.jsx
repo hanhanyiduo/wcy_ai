@@ -25,6 +25,9 @@ function App() {
         <h3 className="text-lg font-semibold text-gray-800 line-clamp-1">
           Premium Wireless Headphones
         </h3>
+        <p className="text-sm text-gray-500 mt-1 line-clamp-2">
+          Noise-cancelling, 30-hour battery life, premium sound quality.
+        </p>
       </div>
     </div>
   )
