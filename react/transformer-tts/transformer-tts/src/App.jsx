@@ -32,7 +32,7 @@ function App() {
       type: 'module'
     })
     const onMessageReceived = (e) => {
-      console.log(e,'来自主线程');
+      // console.log(e,'来自主线程');
       switch (e.data.status) {
         case 'initiate':
           // llm ready了吗
@@ -40,27 +40,28 @@ function App() {
           setProgressItems(prev => [...prev,e.data])
           break;
         case 'progress':
-          // console.log(e.data);
-          setProgressItems(
-            prev => prev.map(item => {
-              if (item.file === e.data.file) {
-                return {
-                  ...item,
-                  progress: e.data.progress
-                }
+          setProgressItems(prev => prev.map(item => {
+            if(item.file === e.data.file) {
+              return {
+                ...item,
+                progress: e.data.progress
               }
-              return item;
-            })
-          )
+            }
+            return item;
+          }))
           break;
         case 'done':
-          setProgressItems(
-            prev => prev.filter(item => item.file !== e.data.file)
-          )
+          setProgressItems(prev => prev.filter(item => item.file !== e.data.file))
           break;
-        case 'ready':
-          setReady(true);
-          break;
+          case 'ready':
+            setReady(true);
+            break;
+            case 'complete':
+              setDisabled(false);
+              const blobUrl = URL.createObjectURL(e.data.output);
+              // console.log(blobUrl);
+              setOutput(blobUrl);
+              break;
       }
     }
     worker.current.onmessage = onMessageReceived;

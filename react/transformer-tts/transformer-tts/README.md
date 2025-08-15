@@ -20,3 +20,10 @@
     - getInstance 只实例化一次
     - 懒执行 
     - promise.all + nlp 流程的理解 （tokenizer + model + vocoder）
+
+- audio 标签的url <- Object.createObjectURL(Blob)  <- 二进制数据位 <- ttsModel 生成
+ <- input_ids(tokenizer 分词 )  + speaking_enbedding + vocoder(合成器)  <- tokenizer + speaking
+    - blob 是一个二进制文件
+    - object.createObjectURL 根据文件返回一个本地浏览的可以临时访问的地址
+    - 大模型不负责给你全局访问的地址
+

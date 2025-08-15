@@ -10,7 +10,7 @@ const AudioPlayer = ({ audioUrl, mimeType}) => {
     useEffect(() => {
         if (audioPlayer.current && audioSource.current) {
             audioSource.current.src = audioUrl;
-            audioPlayer.current.play();
+            audioPlayer.current.load();
         }
     }, [audioUrl])
     return (
